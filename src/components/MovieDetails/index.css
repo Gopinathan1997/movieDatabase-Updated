@@ -1,0 +1,56 @@
+.card {
+  padding: 20px;
+  background-color: black;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+}
+p {
+  color: white;
+  font-family: 'Apple Chancery', cursive;
+  margin-right: 10px;
+}
+h1 {
+  color: white;
+}
+.name {
+  padding-left: 20px;
+}
+.genre {
+  background-color: white;
+  color: black;
+  display: inline-block;
+  margin-right: 20px;
+  padding: 5px;
+  border-radius: 4px;
+  font-weight: 400;
+}
+.duration {
+  display: flex;
+}
+.overview {
+  color: rgb(169, 155, 155);
+  min-width: 500px;
+}
+.rating {
+  color: yellow;
+  font-weight: bolder;
+}
+.banner {
+  height: 500px;
+}
+.cast-detail {
+  width: 500px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.dp {
+  height: 100px;
+}
+.original {
+  color: blue;
+}
+.cast-item {
+  width: 100px;
+}
