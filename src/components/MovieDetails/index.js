@@ -58,16 +58,9 @@ class MovieDetails extends Component {
   }
 
   rendersuccess = () => {
-    const {movieDetails} = this.state
-    const {
-      duration,
-      genre,
-      relaseDate,
-      movieName,
-      rating,
-      overview,
-      image,
-    } = movieDetails
+    const {movieDetails, castStatus} = this.state
+    const {duration, genre, relaseDate, movieName, rating, overview, image} =
+      movieDetails
 
     return (
       <div className="card">
@@ -87,7 +80,7 @@ class MovieDetails extends Component {
             ))}
           </div>
           <p className="overview">{overview}</p>
-          {this.state.castStatus === 'success' ? this.renderCast() : null}
+          {castStatus === 'success' ? this.renderCast() : null}
         </div>
       </div>
     )
