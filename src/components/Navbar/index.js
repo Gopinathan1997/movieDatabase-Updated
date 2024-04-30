@@ -17,39 +17,42 @@ class Navbar extends Component {
     })
   }
 
-  renderSearchBar = () => (
-    <SearchMoviesContext.Consumer>
-      {value => {
-        const {onUpdateSearchedData} = value
+  renderSearchBar = () => {
+    const {searchInput} = this.state
+    return (
+      <SearchMoviesContext.Consumer>
+        {value => {
+          const {onUpdateSearchedData} = value
 
-        const onSearchHandler = event => {
-          this.setState({searchInput: event.target.value})
-        }
+          const onSearchHandler = event => {
+            this.setState({searchInput: event.target.value})
+          }
 
-        const searching = async event => {
-          event.preventDefault()
-          onUpdateSearchedData(this.state.searchInput)
-          const {history} = this.props
-          history.replace('/search')
-        }
+          const searching = async event => {
+            event.preventDefault()
+            onUpdateSearchedData(searchInput)
+            const {history} = this.props
+            history.replace('/search')
+          }
 
-        return (
-          <div className="row-search">
-            <input
-              type="input"
-              className="input"
-              placeholder="Search"
-              onChange={onSearchHandler}
-            />
+          return (
+            <div className="row-search">
+              <input
+                type="input"
+                className="input"
+                placeholder="Search"
+                onChange={onSearchHandler}
+              />
 
-            <button onClick={searching} type="submit">
-              search
-            </button>
-          </div>
-        )
-      }}
-    </SearchMoviesContext.Consumer>
-  )
+              <button onClick={searching} type="submit">
+                search
+              </button>
+            </div>
+          )
+        }}
+      </SearchMoviesContext.Consumer>
+    )
+  }
 
   render() {
     return (
